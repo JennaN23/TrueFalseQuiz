@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 
@@ -19,6 +20,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private Button buttonTrue;
     private Button buttonFalse;
+    private TextView textViewQuestion;
+    public static final String TAG = "";
+    private Quiz quiz;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +32,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         wireWidgets();
         InputStream stream = getResources().openRawResource(R.raw.questions);
         String jsonString = readTextFile(stream);
+        displayQuestions();
+        initializeQuiz();
 
 
         // create a gson object
@@ -49,6 +56,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+    }
+
+    private void initializeQuiz() {
+    }
+
+    private void displayQuestions() {
 
     }
 
@@ -74,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
     private void wireWidgets() {
         buttonFalse = findViewById(R.id.button_main_false);
         buttonTrue = findViewById(R.id.button_main_true);
+        textViewQuestion = findViewById(R.id.textView_main_question);
     }
 
 

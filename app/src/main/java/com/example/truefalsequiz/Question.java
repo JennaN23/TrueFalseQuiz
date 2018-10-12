@@ -1,3 +1,5 @@
+package com.example.truefalsequiz;
+
 public class Question {
     private String question;
     private boolean answer;

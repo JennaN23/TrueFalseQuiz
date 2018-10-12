@@ -1,6 +1,50 @@
 [
   {
-    "question": "Shakespeare wrote \"These violent delights have violent ends\" in the tragedy Romeo and Juliet.",
+    "question": "Shakespeare wrote the line, \"These violent delights have violent ends\" in the tragedy Romeo and Juliet.",
     "answer": true
+  },
+
+  {
+    "question" : "On the tv show Spongebob Squarepants, during \"The Camping Episode\" Squidward is attacked\n by a sea-bear because he eats cubed cheese, plays the clarinet badly, and wears a hat in a goofy fashion.",
+    "answer" : true
+  },
+
+  {
+    "question" : "The song, \"Best Day Ever\" performed by Spongebob Squarepants starts with the lyrics, \"Mr. Sun came up and he smiled at me! Said it's gonna be a good one just wait and see!\"",
+    "answer" : true
+  },
+
+  {
+    "question" : "In the episode \"I Had an Accident\", Spongebob locks himself in his house and befriends a penny, a krabby patty, and an actual gorilla.",
+    "answer" : false
+  },
+
+  {
+    "question" : "In the episode \"The Frycook Games\", Patrick screams \"MY NAME'S NOT RICK!!!\" while wrestling Spongebob to win the games for THe Chum Bucket.",
+    "answer" : true
+  },
+
+  {
+    "question" : "In the episode \"Wet Painters\", Spongebob and Patrick spill paint on Mr. Krabs' prized clown picture.",
+    "answer" : false
+  },
+
+  {
+    "question" : "In the episode \"House Fancy\", Squilliam showcases a giant sculpture of his unibrow that is made from Squidward's tears.",
+    "answer" : false
+  },
+
+  {
+    "question" : "In the episode \"Pest of the West\", Spongebob and Patrick have a musical number where they sing about being friends while riding in coffins.",
+    "answer" : true
+  },
+  {
+    "question" : "In the episode \"The Graveyard Shift\", Squidward tells Spongebob the stroy of the Hash Slinging Slasher.",
+    "answer" : true
+  },
+
+  {
+    "question" : "In the episode \"Pizza Delivery\", Spongebob and Squidward deliver a krabby patty pizza all the way across town and the customer is grateful.",
+    "answer" : false
   }
 ]
