@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonTrue;
     private Button buttonFalse;
     private TextView textViewQuestion;
-    public static final String TAG = "";
+    public static final String TAG = "MainActivity";
     private Quiz quiz;
 
     @Override
@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         wireWidgets();
+        setListeners();
         InputStream stream = getResources().openRawResource(R.raw.questions);
         String jsonString = readTextFile(stream);
-        displayQuestions();
         initializeQuiz();
 
 
@@ -59,10 +59,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void setListeners() {
+        buttonTrue.setOnClickListener(this);
+        buttonFalse.setOnClickListener(this);
+    }
+
     private void initializeQuiz() {
     }
 
-    private void displayQuestions() {
+        displayQuestions();
 
     }
 

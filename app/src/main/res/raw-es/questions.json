@@ -1,0 +1,50 @@
+[
+  {
+    "question": "Shakespeare escribió la línea: \"Estas delicias violentas tienen fines violentos\" en la tragedia de Romeo y Julieta.",
+    "answer": true
+  },
+
+  {
+    "question" : "En el programa de televisión, Spongebob Squarepants, durante \"The Camping Episode \" Squidward es atacado por un oso de mar porque come queso en cubos, toca mal el clarinete y usa un sombrero de manera ridícula ",
+    "answer" : true
+  },
+
+  {
+    "question" : "La canción \"Best Day Ever\" interpretada por Spongebob Squarepants comienza con la letra, \"¡El Sr. Sun se acercó y me sonrió! Dijo que va a ser una buena, solo espera y verás! \"",
+    "answer" : true
+  },
+
+  {
+    "question" : "En el episodio \"Tuve un accidente\", Spongebob se encierra en su casa y se hace amigo de un centavo, una empanada de krabby y un gorila real.",
+    "answer" : false
+  },
+
+  {
+    "question" : "En el episodio, \"The Frycook Games\", Patrick grita \"mi nombre no es Rick!!!\" mientras luchaba con Bob Esponja para ganar los juegos para THe Chum Bucket.",
+    "answer" : true
+  },
+
+  {
+    "question" : "En el episodio \"Pintores húmedos\", Bob Esponja y Patricio derramaron pintura en la preciada foto de payaso del Sr. Krabs.",
+    "answer" : false
+  },
+
+  {
+    "question" : "En el episodio \"House Fancy\", Squilliam exhibe una escultura gigante de su unibrow que está hecha de las lágrimas de Squidward.",
+    "answer" : false
+  },
+
+  {
+    "question" : "In the episode \"Pest of the West\", Spongebob and Patrick have a musical number where they sing about being friends while riding in coffins.",
+    "answer" : true
+  },
+  {
+    "question" : "In the episode \"The Graveyard Shift\", Squidward tells Spongebob the stroy of the Hash Slinging Slasher.",
+    "answer" : true
+  },
+
+  {
+    "question" : "In the episode \"Pizza Delivery\", Spongebob and Squidward deliver a krabby patty pizza all the way across town and the customer is grateful.",
+    "answer" : false
+  }
+]
