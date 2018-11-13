@@ -35,7 +35,7 @@ public class Question {
         this.question = question;
     }
 
-    public boolean isAnswer() {
+    public boolean getAnswer() {
         return answer;
     }
 

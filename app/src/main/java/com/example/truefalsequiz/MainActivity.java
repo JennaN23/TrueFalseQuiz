@@ -1,11 +1,14 @@
 package com.example.truefalsequiz;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -23,21 +26,34 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewQuestion;
     public static final String TAG = "MainActivity";
     private Quiz quiz;
+    private Question currentQuestion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        buttonFalse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkAnswer(false);
+            }
+        });
+
+        buttonTrue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkAnswer(true);
+                }
+        });
 
 
 
 
         wireWidgets();
-        setListeners();
+
         InputStream stream = getResources().openRawResource(R.raw.questions);
         String jsonString = readTextFile(stream);
-        initializeQuiz();
 
 
         // create a gson object
@@ -49,7 +65,9 @@ public class MainActivity extends AppCompatActivity {
 // verify that it read everything properly
         Log.d(TAG, "onCreate: " + questionList.toString());
 
+    quiz = new Quiz(questionList);
 
+    displayNextQuestion();
 
 
 
@@ -59,17 +77,33 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setListeners() {
-        buttonTrue.setOnClickListener(this);
-        buttonFalse.setOnClickListener(this);
+    private void checkAnswer(boolean b) {
+        if(currentQuestion.checkAnswer(answer)){
+            quiz.incrementScore();
+            Toast.makeText(this, "Correct!!", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(this, "Incorrect.", Toast.LENGTH_SHORT).show();
+            displayNextQuestion();
+        }
+
     }
 
-    private void initializeQuiz() {
+    private void displayNextQuestion() {
+        if(quiz.isAnotherQuestion()){
+            currentQuestion = quiz.nextQuestion();
+            textViewQuestion.setText(currentQuestion.getQuestion());
+        }
+        else
+        {
+            textViewQuestion.setText("There are no more questions.");
+            String finalScore = "Your final score is " + String.valueOf(quiz.getScore());
+            Intent intentFinalScore = new Intent(MainActivity.this, FinalScoreActivity.class);
+            intentFinalScore.putExtra("Your final score is ", finalScore);
+            startActivity(intentFinalScore);
+        }
     }
 
-        displayQuestions();
-
-    }
 
     private String readTextFile(InputStream inputStream) {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();

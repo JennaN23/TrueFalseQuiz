@@ -13,7 +13,7 @@ public class Quiz {
     private Button buttonTrue;
     private Button buttonFalse;
 
-    public Quiz(int score, int currentQuestion, List<Question> questions, Quiz quiz, Button buttonTrue, Button buttonFalse) {
+    public Quiz(List<Question> questions) {
         this.score = score;
         this.currentQuestion = currentQuestion;
         this.questions = questions;
@@ -22,21 +22,14 @@ public class Quiz {
         this.buttonFalse = buttonFalse;
     }
 
-    public int getScore() {
-    }
+
+
+    public int getScore(){
         return score;
     }
 
-    public boolean checkAnswer(){
-    if(questions)
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public int getCurrentQuestion() {
-        return currentQuestion;
+    public void incrementScore(){
+        score++;
     }
 
     public void setCurrentQuestion(int currentQuestion) {
@@ -51,10 +44,11 @@ public class Quiz {
         this.questions = questions;
     }
 
-    public void nextQuestion() {
-        if(isAnotherQuestion() == true){
-            currentQuestion++;
-        }
+    public Question nextQuestion() {
+        Question nextQ = questions.get(currentQuestion);
+        currentQuestion++;
+        return nextQ;
+
     }
 
     public boolean isAnotherQuestion(){
@@ -67,20 +61,6 @@ public class Quiz {
         }
     }
 
-    public Question displayQuestions() {
-        if(quiz.isAnotherQuestion()){
-            Question question = quiz.nextQuestion();
-            TextView question.setText(question.getQuestion());
-        }
-        else{
-            quiz.displayScore();
-        }
-
-
-
-    public void displayScore(){
-        getScore();
-    }
 
 
 }

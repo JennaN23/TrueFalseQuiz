@@ -35,16 +35,16 @@
   },
 
   {
-    "question" : "In the episode \"Pest of the West\", Spongebob and Patrick have a musical number where they sing about being friends while riding in coffins.",
+    "question" : "En el episodio \"Pest of the West \", Spongebob y Patrick tienen un número musical en el que cantan sobre ser amigos mientras viajan en ataúdes.",
     "answer" : true
   },
   {
-    "question" : "In the episode \"The Graveyard Shift\", Squidward tells Spongebob the stroy of the Hash Slinging Slasher.",
+    "question" : "En el episodio \"The Graveyard Shift \", Squidward le dice a Spongebob la obra del Hash Slinging Slasher.",
     "answer" : true
   },
 
   {
-    "question" : "In the episode \"Pizza Delivery\", Spongebob and Squidward deliver a krabby patty pizza all the way across town and the customer is grateful.",
+    "question" : "En el episodio \"Pizza Delivery \", Bob Esponja y Calamardo entregan una pizza Krabby Patty en toda la ciudad y el cliente está agradecido.",
     "answer" : false
   }
 ]
