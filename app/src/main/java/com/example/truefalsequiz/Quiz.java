@@ -9,17 +9,12 @@ public class Quiz {
     private int score = 0;
     private int currentQuestion = 0;
     private List<Question> questions;
-    private Quiz quiz;
-    private Button buttonTrue;
-    private Button buttonFalse;
 
     public Quiz(List<Question> questions) {
         this.score = score;
         this.currentQuestion = currentQuestion;
         this.questions = questions;
-        this.quiz = quiz;
-        this.buttonTrue = buttonTrue;
-        this.buttonFalse = buttonFalse;
+
     }
 
 
@@ -52,7 +47,7 @@ public class Quiz {
     }
 
     public boolean isAnotherQuestion(){
-        if(currentQuestion < questions.size() - 1){
+        if(currentQuestion < questions.size()){
             return true;
         }
         else

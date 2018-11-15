@@ -9,21 +9,13 @@ public class Question {
         this.answer = answer;
     }
 
-    @Override
-    public String toString() {
-        return "Question{" +
-                "question='" + question + '\'' +
-                ", answer=" + answer +
-                '}';
-    }
-
     public boolean checkAnswer(boolean userAnswer)
     {
-        if(answer != userAnswer){
-            return false;
+        if(userAnswer == answer){
+            return true;
         }
         else{
-        return true;
+        return false;
         }
     }
 

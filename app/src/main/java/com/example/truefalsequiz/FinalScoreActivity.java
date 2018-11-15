@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-class FinalScoreActivity extends AppCompatActivity{
+public class FinalScoreActivity extends AppCompatActivity{
     private TextView textViewFinalScore;
     private Button buttonPlayAgain;
 
@@ -29,7 +29,7 @@ class FinalScoreActivity extends AppCompatActivity{
 
     private void wireWidgets() {
         textViewFinalScore = findViewById(R.id.textView_finalScoreActivity_finalScore);
-        String finalScore = getIntent().getStringExtra(MainActivity.TAG);
+        String finalScore = getIntent().getStringExtra(MainActivity.FINAL_SCORE);
         textViewFinalScore.setText(finalScore);
         buttonPlayAgain = findViewById(R.id.button_finalScoreActivity_playAgain);
     }

@@ -24,19 +24,27 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonTrue;
     private Button buttonFalse;
     private TextView textViewQuestion;
+    public static final String FINAL_SCORE = "Your final score is ";
     public static final String TAG = "MainActivity";
     private Quiz quiz;
     private Question currentQuestion;
+    private boolean answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+        wireWidgets();
+
         buttonFalse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 checkAnswer(false);
+                answer = false;
+
             }
         });
 
@@ -44,13 +52,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 checkAnswer(true);
-                }
+                answer = true;
+            }
         });
 
-
-
-
-        wireWidgets();
 
         InputStream stream = getResources().openRawResource(R.raw.questions);
         String jsonString = readTextFile(stream);
@@ -84,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
         }
         else{
             Toast.makeText(this, "Incorrect.", Toast.LENGTH_SHORT).show();
-            displayNextQuestion();
         }
+        displayNextQuestion();
 
     }
 
@@ -97,9 +102,9 @@ public class MainActivity extends AppCompatActivity {
         else
         {
             textViewQuestion.setText("There are no more questions.");
-            String finalScore = "Your final score is " + String.valueOf(quiz.getScore());
+            String finalScore = FINAL_SCORE + String.valueOf(quiz.getScore());
             Intent intentFinalScore = new Intent(MainActivity.this, FinalScoreActivity.class);
-            intentFinalScore.putExtra("Your final score is ", finalScore);
+            intentFinalScore.putExtra(FINAL_SCORE, finalScore);
             startActivity(intentFinalScore);
         }
     }
@@ -110,9 +115,9 @@ public class MainActivity extends AppCompatActivity {
 
         byte buf[] = new byte[1024];
         int len;
-        try {
-            while ((len = inputStream.read(buf)) != -1) {
-                outputStream.write(buf, 0, len);
+                try {
+                    while ((len = inputStream.read(buf)) != -1) {
+                        outputStream.write(buf, 0, len);
             }
             outputStream.close();
             inputStream.close();
