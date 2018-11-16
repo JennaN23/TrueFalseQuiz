@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
     private Quiz quiz;
     private Question currentQuestion;
-    private boolean answer;
+    private boolean userAnswer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +42,9 @@ public class MainActivity extends AppCompatActivity {
         buttonFalse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                userAnswer = false;
                 checkAnswer(false);
-                answer = false;
+
 
             }
         });
@@ -51,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
         buttonTrue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                userAnswer = true;
                 checkAnswer(true);
-                answer = true;
             }
         });
 
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkAnswer(boolean b) {
-        if(currentQuestion.checkAnswer(answer)){
+        if(currentQuestion.checkAnswer(userAnswer)){
             quiz.incrementScore();
             Toast.makeText(this, "Correct!!", Toast.LENGTH_SHORT).show();
         }

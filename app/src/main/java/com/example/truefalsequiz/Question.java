@@ -2,7 +2,7 @@ package com.example.truefalsequiz;
 
 public class Question {
     private String question;
-    private boolean answer;
+    private boolean answer = true;
 
     public Question(String question, boolean answer) {
         this.question = question;
@@ -11,12 +11,8 @@ public class Question {
 
     public boolean checkAnswer(boolean userAnswer)
     {
-        if(userAnswer == answer){
-            return true;
-        }
-        else{
-        return false;
-        }
+        return (userAnswer == answer);
+
     }
 
     public String getQuestion() {
